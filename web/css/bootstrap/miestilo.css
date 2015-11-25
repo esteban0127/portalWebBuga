@@ -1,0 +1,173 @@
+* {
+
+    margin: 0px;
+    padding: 0px;
+
+}
+
+body {
+    background: url(../..//image/cielo.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.main {
+
+    max-width: 1000px;
+    margin: 20px auto;
+
+}
+
+.slides {
+    width: 100%;
+
+}
+
+.slides img{
+
+    width: 100%;
+}
+
+.slidesjs-pagination{
+    background: #424242;
+    list-style: none;
+    overflow: hidden;
+}
+
+.slidesjs-pagination li{
+    float: left;
+
+}
+.slidesjs-pagination li a{
+    display: block;
+    padding: 10px 20px;
+    color:#fff;
+    text-decoration:none; 
+}
+.slidesjs-pagination li a:hover{
+    background: #000; 
+}
+
+.slides .active {
+    background: #000;
+}
+
+.slidesjs-navigation {
+    background: #000;
+    color: #fff;
+    text-decoration:none;
+    display: inline-block;
+    padding: 10px 20px;
+    float: right;
+
+} 
+
+
+
+#header {
+    width: 200px;
+    margin-top: 50px;
+
+
+
+}
+
+#header ul {
+
+    list-style: none;
+
+}
+
+#header ul li {
+
+    margin-top: 15px;
+    font-family: tahoma;
+    font-size: 18px;
+    background-color: white;
+    width: 160px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-radius: 0px 20px 20px 0px;
+    padding-left: 20px;
+    box-shadow: 5px 0px 10px #939393;
+    -webkit-transition: padding-left 0.6s;
+
+}
+
+#header ul li:hover{
+
+    padding-left: 50px;
+
+}
+
+
+ul li a {
+    color: black;
+}
+
+div p {
+
+    margin-left:145px; 
+
+}
+
+h1 {
+    margin-left:145px; 
+}
+
+#l {
+    margin-top: 1px;
+    margin-left: 565px;
+
+
+}
+
+.ll {
+
+    list-style: none;
+}
+
+.ll img{
+    padding: 15px;
+    background-color: white;
+    -webkit-box-shadow:inset 0px 0px 10px #000;
+
+
+}
+
+.ll img:hover{
+
+    background-color: #000;
+}
+
+.baner {
+
+    margin-left: 250px;
+    margin-top: 50px;
+
+}
+
+p {
+    color: black;
+}
+
+h1 {
+    color: black;
+}
+
+#ff img{
+
+    margin-left: 30px;
+}
+
+
+nav {
+   
+    position: absolute;
+    left: -18em;
+}
+
+nav#header {
+    left: 0;
+}
+
