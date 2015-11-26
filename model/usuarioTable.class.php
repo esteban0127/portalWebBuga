@@ -46,9 +46,10 @@ class usuarioTable extends usuarioBaseTable {
             . '(usu_usuario, usu_password,usu_activado,rol_id)'
             . 'VALUES (:id,:usuario,:password,:activado,:rol_id)';
     $params = array(
-        ':usu_usuario'=>  $this->getUsuario(),
-        ':usu_password' => $this->getPassword(),
-        ':usu_activado' => $this->getActivado()
+        ':usuario'=>  $this->getUsuario(),
+        ':password' => $this->getPassword(),
+        ':activado' => $this->getActivado(),
+        ':rol_id' => $this->getRolId()
     );
     $answer = $conn->prepare($sql);
     $answer->execute($params);
@@ -59,13 +60,12 @@ class usuarioTable extends usuarioBaseTable {
     $conn = $this->getConnection($this->config);
     $sql = 'UPDATE bdp_usuario SET usu_usuario = :usuario, usu_password = :password,'
             . 'usu_activado = :activado, rol_id =:rol_id'
-            . 'where';
+            . 'where usu_id = :id';
     $params = array(
         ':usuario' => $this->getUsuario(),
         ':password' => $this->getPassword(),
         ':activado' => $this->getActivado(),
         ':rol_id' => $this->getRolId(),
-        ':registro' => $this->getRegistro(),
         ':id' => $this->getId()
     );
     $answer = $conn->prepare($sql);
