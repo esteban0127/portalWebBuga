@@ -28,7 +28,7 @@ class imagenTable extends imagenBaseTable {
             . 'AND img_id = :id';
     
     
-    $params = array(':id' = $id);
+    $params = array(':id' => $id);
     $answer = $conn -> prepare ($sql);
     $answer -> execute ($params);
     return ($answer -> rowCount() > 0) ? $answer-> fetchAll (PDO::FETCH_OBJ) : false;  
@@ -37,7 +37,7 @@ class imagenTable extends imagenBaseTable {
   public function save(){
    $conn = $this -> getConnection ($this->config);
     $sql = 'INSERT INTO imagen'
-            . '(img_id,  eve_id, sit_id, img_ruta)';
+            . '(img_id,  eve_id, sit_id, img_ruta)'
             . 'VALUES (:id, :eve, :sit, :ruta)';
     
     $params = array(
@@ -56,5 +56,5 @@ class imagenTable extends imagenBaseTable {
     return true;  
   }
   
-  
-}
+ }
+

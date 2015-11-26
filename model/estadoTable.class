@@ -10,7 +10,7 @@ use FSstudio\model\base\usuarioBaseTable;
 class categoriaTable extends categoriaTable {
     public function getAll() {
         $conn = $this->getConnection($this->config);
-        $sql = 'SELECT  est_id as id, est_nombre as est_id,'
+        $sql = 'SELECT  est_id as id, est_nombre as nombre,'
                 . 'est_created as created as update,'
                 .'FROM bd_sitios'
                 .'WHERE est_update is null'
