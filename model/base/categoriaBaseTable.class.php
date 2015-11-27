@@ -79,22 +79,22 @@ class categoriaBaseTable {
     }
     
       public function setNombre($nombre){
-       $this->id;
+       $this->nombre = $nombre;
     }
       public function setActivo($activo){
-       $this->id;
+       $this->activo = $activo;
     }
       public function setCat($cat){
-       $this->id;
+       $this->cat = $cat;
     }
       public function setCreated_at($created_at){
-       $this->id;
+       $this->created_at = $created_at;
     }
       public function setUpdate_at($update_at){
-       $this->id;
+       $this->update = $update_at;
     }
       public function setDelete_at($delete_At){
-       $this->id;
+       $this->delete_at = $delete_At;
     }
 }
 
