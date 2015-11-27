@@ -23,7 +23,7 @@ class usuarioTable extends usuarioBaseTable {
     return ($answer->rowCount() > 0) ? $answer->fetchAll(PDO::FETCH_OBJ) : false;
   }
   
-  public function getById($id){
+  public function getById($id=NULL){
     $conn = $this->getConnection($this->config);
     $sql = 'SELECT  usu_id AS id , usu_usuario AS usuario , usu_password AS password ,'
             . ' usu_activado AS activado , rol_id AS rol_id ,'
@@ -53,7 +53,9 @@ class usuarioTable extends usuarioBaseTable {
     );
     $answer = $conn->prepare($sql);
     $answer->execute($params);
-    return ($answer->rowCount() > 0) ? $answer->fetchAll(PDO::FETCH_OBJ) : false;
+    //return ($answer->rowCount() > 0) ? $answer->fetchAll(PDO::FETCH_OBJ) : false;
+    $this->setId($conn->lastInsertId());
+    return TRUE;
    }
    
    public function update() {

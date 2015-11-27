@@ -25,7 +25,7 @@ class etiquetaTable extends etiquetaBaseTable{
     return ($answer->rowCount() > 0) ? $answer->fetchAll(PDO::FETCH_OBJ) : false;
   }
   
-   public function getById($id){
+   public function getById($id = null){
     $conn = $this->getConnection($this->config);
     $sql = 'SELECT  eti_id AS id , eti_nombre AS nombre , sit_id AS sitio_id ,'
             . 'eve_id AS evento_id ,'
@@ -54,7 +54,9 @@ class etiquetaTable extends etiquetaBaseTable{
     );
     $answer = $conn->prepare($sql);
     $answer->execute($params);
-    return ($answer->rowCount() > 0) ? $answer->fetchAll(PDO::FETCH_OBJ) : false;
+   // return ($answer->rowCount() > 0) ? $answer->fetchAll(PDO::FETCH_OBJ) : false;
+    $this->setId($conn->lastInsertId());
+    return TRUE;
    }
    
    public function update() {
