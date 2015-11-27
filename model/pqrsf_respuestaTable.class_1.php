@@ -29,7 +29,7 @@ class pqrsf_respuestaTable extends pqrsf_respuestaTable  {
             . 'WHERE res_deleted_at IS NULL  '
             . 'AND res_id = :id';
     $params = array(
-        ':id' => $id
+        ':id' => ($res_id !== null) ? $cat_id : $this->getres_id()
     );
     $answer = $conn->prepare($sql);
     $answer->execute($params);
