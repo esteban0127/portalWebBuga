@@ -10,28 +10,24 @@ use FSstudio\model\base\usuarioBaseTable;
 class categoriaTable extends categoriaTable {
     public function getAll() {
         $conn = $this->getConnection($this->config);
-        $sql = 'SELECT  cat_id as id, cat_nombre as cat_id,'
-                . 'cat_activo as activo as cat_cat_id as activo,'
-                .'cat_cat_id as id as cat_created_at as cat_id,'
-                .'cat_update as update as cat_delete as update,'
+        $sql = 'SELECT  est_id as id, est_nombre as est_id,'
+                . 'est_created as created as update,'
                 .'FROM bd_sitios'
-                .'WHERE cat_delete is null'
-                .'ORDER by cat_created_at ASC';
+                .'WHERE est_update is null'
+                .'ORDER by est_created_at ASC';
         $answer = $conn->prepare($sql);
         $answer->execute($params);
-        return ($answer->rowCount() > 0) ? $answer->fetchAll(PDO::FECTH_OBJ) : false;|
+        return ($answer->rowCount() > 0) ? $answer->fetchAll(PDO::FECTH_OBJ) : false;
     }
-      public function getById($id) {
+      public function getById($id = null) {
     $conn = $this->getConnection($this->config);
-    $sql = 'SELECT  cat_id as id, cat_nombre as cat_id,'
-                . 'cat_activo as activo as cat_cat_id as activo,'
-                .'cat_cat_id as id as cat_created_at as cat_id,'
-                .'cat_update as update as cat_delete as update,'
+    $sql = 'SELECT  est_id as id, est_nombre as est_id,'
+                . 'est_created as created as update,'
                 .'FROM bd_sitios'
-                .'WHERE cat_delete is null'
-                .'AND cat_id = :id';
+                .'WHERE est_update is null'
+                .'AND est_id = :id';
     $params = array(
-        ':id' => $cat_id
+        ':id' => $est_id
     );
     $answer = $conn->prepare($sql);
     $answer->execute($params);
@@ -41,17 +37,18 @@ class categoriaTable extends categoriaTable {
     public function save() {
         $conn =  $this->getAllConnection($this->config);
         $sql = 'INSERT INTO id'
-                 . '(cat_id, cat_nombre, cat_activado) '
-            . 'VALUES (:cat_id, :nombre,:activado)';
+                 . '(est_id, est_nombre, est_update) '
+            . 'VALUES (:est_id, :nombre,:update)';
         $params = array(
-          ':id'=> $this->getcat_id(),
-        ':nombre'=>$this->getcat_nombre(),
-          ':activo'=>$this->getcat_activo()  
+          ':id'=> $this->getest_id(),
+        ':nombre'=>$this->getest_nombre(),
+          ':update'=>$this->getest_update()  
         );
         
         $answer = $conn->prepare($sql);
         $answer->execute($params);
-        return $conn->lastInsertId(self::_SEQUENCE);
+        $this->setId($conn->lastInsertId())
+        return true;
     }
     
     
@@ -59,13 +56,13 @@ class categoriaTable extends categoriaTable {
 public function update() {
     $conn = $this->getConnection($this->config);
     $sql = 'update bd_sitio SET'
-              .'cat_id = :cat_id,'
-              .'cat_nombre = :nombre,'
-              .'cat_activo = :activo';
+              .'est_id = :id,'
+              .'est_nombre = :nombre,'
+              .'est_update = :update';
       $params = array(
-          ':id'=> $this->getcat_id(),
-        ':nombre'=>$this->getcat_nombre(),
-          ':activo'=>$this->getcat_activo()  
+          ':id'=> $this->getest_id(),
+        ':nombre'=>$this->getest_nombre(),
+          ':update'=>$this->getest_update()  
         );
        
     $answer = $conn->prepare($sql);
@@ -76,14 +73,14 @@ public function update() {
   public function delete($deleteLogical = true) {
     $conn = $this->getConnection($this->config);
     $params = array(
-         ':id'=> $this->getcat_id(),
+         ':id'=> $this->getest_id(),
     );
     switch ($deleteLogical) {
       case true:
-        $sql = 'UPDATE bd_sitio set cat_id_delete = now () WHERE cat_id = :id';
+        $sql = 'UPDATE bd_sitio set est_id_delete = now () WHERE est_id = :id';
         break;
       case false:
-        $sql = 'DELETE FROM bd_sitio WHERE cat_id = :id';
+        $sql = 'DELETE FROM bd_sitio WHERE est_id = :id';
         break;
       default:
         throw new PDOException('Por favor indique un dato coherente para el borrado lógico (true) o físico (false)');
