@@ -10,7 +10,7 @@ use FStudio\myConfig as config;
  *
  * @author Usuario
  */
-class categoriaBaseTable {
+class categoriaBaseTable extends model{
 
     const ID = 'cant_id';
     const NOMBRE = 'cat_nombre';
@@ -35,7 +35,7 @@ class categoriaBaseTable {
     private $update_at;
     private $delete_at;
     
-    public function _construct(config $config, $id = null, $credencial_id =null, $usuario = null, $password = null, $activado = 't', $last_login_at = null, $created_at = null, $updated_at = null, $deleted_at = null) {
+    public function _construct(config $config, $id = null, $nombre =null, $activo = null, $cat = null, $created_at = null, $update_at = null, $delete_at = null) {
         $this->config = $config;
         $this->id = $id;
         $this->nombre = $nombre;

@@ -10,7 +10,7 @@ use portarWebBuga\myConfig as config;
  *
  * @author Angel
  */
-class pqrsf_respuesta extends model {
+class pqrsfRespuesta extends model {
  
   const ID = 'res_id';
   const PQRSF = 'pqrsf_id';

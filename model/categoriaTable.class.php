@@ -10,10 +10,10 @@ use FSstudio\model\base\usuarioBaseTable;
 class categoriaTable extends categoriaTable {
     public function getAll() {
         $conn = $this->getConnection($this->config);
-        $sql = 'SELECT  cat_id as id, cat_nombre as cat_id,'
-                . 'cat_activo as activo as cat_cat_id as activo,'
-                .'cat_cat_id as id as cat_created_at as cat_id,'
-                .'cat_update as update as cat_delete as update,'
+        $sql = 'SELECT  cat_id as id, cat_nombre as nombre,'
+                .'cat_activo as activo as cat_cat_id as cat,'
+                .'cat_cat_id as id as cat_created_at as created,'
+                .'cat_update as update as cat_delete as delete,'
                 .'FROM bd_sitios'
                 .'WHERE cat_delete is null'
                 .'ORDER by cat_created_at ASC';
@@ -23,15 +23,15 @@ class categoriaTable extends categoriaTable {
     }
       public function getById($id = null) {
     $conn = $this->getConnection($this->config);
-    $sql = 'SELECT  cat_id as id, cat_nombre as cat_id,'
-                . 'cat_activo as activo as cat_cat_id as activo,'
-                .'cat_cat_id as id as cat_created_at as cat_id,'
-                .'cat_update as update as cat_delete as update,'
+    $sql = 'SELECT cat_id as id, cat_nombre as nombre,'
+                .'cat_activo as activo as cat_cat_id as cat,'
+                .'cat_cat_id as id as cat_created_at as created,'
+                .'cat_update as update as cat_delete as delete,'
                 .'FROM bd_sitios'
                 .'WHERE cat_delete is null'
                 .'AND cat_id = :id';
     $params = array(
-        ':id' => ($cat_id !== null) ? $cat_id : $this->getCat_id()
+        ':id' => ($id !== null) ? $id : $this->getCat_id()
     );
     $answer = $conn->prepare($sql);
     $answer->execute($params);

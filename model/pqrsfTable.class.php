@@ -32,7 +32,7 @@ class pqrsfTable {
                 .'WHERE pqrsf_update_at is null'
                 .'AND pqrsf_id = :id';
     $params = array(
-        ':id' => ($pqsrf_id !== null) ? $cat_id : $this->getpqsrf_id()
+        ':id' => ($id !== null) ? $id : $this->getpqsrf_id()
     );
     $answer = $conn->prepare($sql);
     $answer->execute($params);

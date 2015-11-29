@@ -12,14 +12,14 @@ use FStudio\myConfig as config;
  *
  * @author Usuario
  */
-class pqrsfBaseTable {
+class pqrsfBaseTable extends model{
       const ID = 'pqrsf_id';
-    const usuario_id = 'usu_id';
-    const estado_id = 'est_id';
-    const mensaje = 'pqrsf_mensaje';
-    const created = 'pqrsf_created_at';
-    const update = 'pqrsf_update_at';
-    const delete = 'pqrsf_delete_at';
+    const USUARIO_ID= 'usu_id';
+    const ESTADO_ID= 'est_id';
+    const MENSAJE = 'pqrsf_mensaje';
+    const CREATED = 'pqrsf_created_at';
+    const UPDATE = 'pqrsf_update_at';
+    const DELETE = 'pqrsf_delete_at';
     
        /** 
      * Configuracion del sistema
@@ -34,7 +34,17 @@ class pqrsfBaseTable {
     private $pqrsf_cretaed_at;
     private $pqsrf_update_at;
     private $pqrsf_delete_at;
-    }
+    
+    
+       public function _construct(config $config, $id = null, $mensaje = null, $update = null, $delete = null, $created =null) {
+        $this->config = $config;
+        $this->pqrsf_id = $id;
+        $this->pqrsf_mensaje = $mensaje;
+        $this->pqsrf_update_at = $update;
+        $this->pqrsf_delete_at = $delete;
+        $this->pqrsf_cretaed_at = $created;
+    
+}
     
    
     
@@ -79,13 +89,13 @@ class pqrsfBaseTable {
       public function setPqrsf_mensaje($pqrsf_mensaje){
        $this->pqsrf_mensaje = $pqrsf_mensaje;
     }
-      public function setCreated_at($pqrsf_cretaed_at){
-       $this->created_at $pqrsf_created_at;
+      public function setCreated_at($pqrsf_created_at){
+       $this->created_at = $pqrsf_created_at;
     }
       public function setUpdate_at($pqrsf_update_at){
        $this->update_at = $pqrsf_update_at;
     }
-      public function setDelete_at($pqrsf_delete_At){
+      public function setDelete_at($pqrsf_delete_at){
        $this->delete_at = $pqrsf_delete_at;
     }
 }

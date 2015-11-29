@@ -1,6 +1,6 @@
 <?php
 
-use portalWebBuga\model\base\pqrsf_respuestaBaseTable;
+use portalWebBuga\model\base\pqrsfRespuestaBaseTable;
 /**
  * Description of pqrsf_respuestaTable
  *
@@ -10,8 +10,8 @@ class pqrsf_respuestaTable extends pqrsf_respuestaTable  {
  public function getAll() {
     $conn = $this->getConnection($this->config);
     $sql = 'SELECT  res_id AS id , pqrsf_id AS pqrsf , usu_id AS usuario ,'
-            . 'res_created_at AS created_at , res_update_at AS update_at ,'
-            . 'res_delete_at AS delete_at '
+            . 'res_created_at AS created_at , res_update_at AS update ,'
+            . 'res_delete_at AS delete '
             . 'FROM bdp_pqrsf_respuesta'
             . 'WHERE res_deleted_at IS NULL  '
             . 'ORDER BY created_at ASC';
@@ -23,13 +23,13 @@ class pqrsf_respuestaTable extends pqrsf_respuestaTable  {
    public function getById($id = null){
     $conn = $this->getConnection($this->config);
     $sql = 'SELECT  res_id AS id , pqrsf_id AS pqrsf , usu_id AS usuario ,'
-            . 'res_created_at AS created_at , res_update_at AS update_at ,'
-            . 'res_delete_at AS delete_at '
+            . 'res_created_at AS created_at , res_update_at AS update ,'
+            . 'res_delete_at AS delete '
             . 'FROM bdp_pqrsf_respuesta'
             . 'WHERE res_deleted_at IS NULL  '
             . 'AND res_id = :id';
     $params = array(
-        ':id' => ($res_id !== null) ? $cat_id : $this->getres_id()
+        ':id' => ($id !== null) ? $id : $this->getres_id()
     );
     $answer = $conn->prepare($sql);
     $answer->execute($params);

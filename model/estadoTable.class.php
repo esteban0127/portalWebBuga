@@ -10,8 +10,8 @@ use FSstudio\model\base\usuarioBaseTable;
 class categoriaTable extends categoriaTable {
     public function getAll() {
         $conn = $this->getConnection($this->config);
-        $sql = 'SELECT  est_id as id, est_nombre as est_id,'
-                . 'est_created as created as update,'
+        $sql = 'SELECT  est_id as id, est_nombre as nombre,'
+                . 'est_created as created, est_update_at as update,'
                 .'FROM bd_sitios'
                 .'WHERE est_update is null'
                 .'ORDER by est_created_at ASC';
@@ -21,13 +21,13 @@ class categoriaTable extends categoriaTable {
     }
       public function getById($id = null) {
     $conn = $this->getConnection($this->config);
-    $sql = 'SELECT  est_id as id, est_nombre as est_id,'
-                . 'est_created as created as update,'
+    $sql = 'SELECT  est_id as id, est_nombre as nombre,'
+                . 'est_created as created, est_update_at as update,'
                 .'FROM bd_sitios'
                 .'WHERE est_update is null'
                 .'AND est_id = :id';
     $params = array(
-       ':id' => ($est_id !== null) ? $cat_id : $this->getest_id()
+       ':id' => ($id !== null) ? $id : $this->getest_id()
     );
     $answer = $conn->prepare($sql);
     $answer->execute($params);

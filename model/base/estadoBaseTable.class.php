@@ -11,7 +11,7 @@ use FStudio\myConfig as config;
  *
  * @author Usuario
  */
-class estadoBaseTable {
+class estadoBaseTable extends model{
     const ID = 'est_id';
     const NOMBRE = 'est_nombre';
     const NOMBRE_LENGTH = '50';
@@ -29,7 +29,7 @@ class estadoBaseTable {
     private $created_at;
     private $update_at;
   
-     public function _construct(config $config, $est_id = null, $nombre = null, $created_at = null, $updated_at = null) {
+     public function _construct(config $config, $id = null, $nombre = null, $created_at = null, $updated_at = null) {
         $this->config = $config;
         $this->id = $id;
         $this->nombre = $nombre;
