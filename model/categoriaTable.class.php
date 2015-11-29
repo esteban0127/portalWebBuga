@@ -56,7 +56,7 @@ class categoriaTable extends categoriaTable {
     }
     
     
-}
+
 public function update() {
     $conn = $this->getConnection($this->config);
     $sql = 'update bd_sitio SET'
