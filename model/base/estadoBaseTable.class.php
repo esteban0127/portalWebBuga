@@ -29,7 +29,7 @@ class estadoBaseTable extends model{
     private $created_at;
     private $update_at;
   
-     public function _construct(config $config, $id = null, $nombre = null, $created_at = null, $updated_at = null) {
+     public function _construct(config $config, $id = null, $nombre = null, $created_at = null, $update_at = null) {
         $this->config = $config;
         $this->id = $id;
         $this->nombre = $nombre;
@@ -56,18 +56,18 @@ class estadoBaseTable extends model{
         return $this->update_at;
     }
     
-      public function setId($id){
+      public function setId($est_id){
        $this->id = $est_id;
     }
     
-      public function setNombre($nombre){
+      public function setNombre($est_nombre){
        $this->nombre = $est_nombre;
     }
     
-      public function setCreated_at($created_at){
+      public function setCreated_at($est_created_at){
        $this->created = $est_created_at;
     }
-      public function setUpdate_at($update_at){
+      public function setUpdate_at($est_update_at){
        $this->update = $est_update_at;
     }
-      
+}
