@@ -1,23 +1,31 @@
 <?php
 
-/**
- * Dirección URL del proyecto
- */
-define('URL', 'http://localhost/portalWebBuga/web/');
+use FStudio\myConfig as config;
 
-/**
- * Dirección física del proyecto en el servidor
- */
-define('DIR', 'D:/Pana/xampp/htdocs/portalWebBuga/');
+$config = new config();
 
-define("DB_HOST", "localhost");
-define("DRIVER", "mysql");
-define("DB_NAME", "");
-define("DB_USUARIO", "root");
-define("DB_PASSWORD", "");
-define("DB_PORT", 3306);
+$config->setPath('D:/Pana/xampp/htdocs/portalWebBuga/');
+$config->setUrl('http://localhost/portalWebBuga/web/');
 
-define("DSN", DRIVER . ":host=" . DB_HOST . ";dbname=" . DB_NAME . ";port=" . DB_PORT);
+$config->setDriver('mysql');
+$config->setHost('localhost');
+$config->setPort(3306);
+$config->setDbName('portal_web_buga');
+$config->setUser('root');
+$config->setPassword('');
+$config->setDsn(
+        $config->getDriver()
+        . ':host=' . $config->getHost()
+        . ';port=' . $config->getPort()
+        . ';dbname=' . $config->getDbName()
+);
 
-define("MODULO_DEFAULT", "inicio");
-define("ACCION_DEFAULT", "indexController");
+$config->setSessionName('FStudio');
+
+$config->setDefaultModule('inicio');
+$config->setDefaultAction('index');
+
+//$config->setPlugins(array(
+//    'fsEjemplo1Plugin',
+//    'fsEjemplo2Plugin',
+//));

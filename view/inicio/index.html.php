@@ -1,11 +1,14 @@
-<?php include DIR . 'view/partial/head.php' ?>
-<link rel="stylesheet" href="<?php echo URL ?>css/exception.css">
+<?php include_once $fsConfig->getPath() . 'view/partial/head.php' ?>
+
+
+
+<link rel="stylesheet" href="<?php echo $fsConfig->getUrl() ?>css/exception.css">
 <div class="container container-fluid ">
   <div>
     <div class="row">
       <div  class="col-md-12 col-sm-12 col-xs-12">
 
-        <a class="aa" href="<?php echo URL ?>index.php/inicio/indexController" class="btn btn-danger"> <img class="img-responsive" src="<?php echo URL ?>image/banner.jpg"></a>
+        <a class="aa" href="<?php echo $fsConfig->getUrl() ?>index.php/inicio/index" class="btn btn-danger"> <img class="img-responsive" src="<?php echo $fsConfig->getUrl() ?>image/banner.jpg"></a>
 
       </div>
     </div>
@@ -23,7 +26,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="<?php echo URL ?>index.php/inicio/indexController">BugaRoutes</a>
+          <a class="navbar-brand" href="<?php echo $fsConfig->getUrl() ?>index.php/inicio/index">BugaRoutes</a>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
@@ -46,15 +49,15 @@
             <div class="form-group">
               <input type="text" class="form-control" placeholder="Search">
             </div>
-            <a href="<?php echo URL ?>index.php/inicio/buscarController" type="submit" class="btn btn-default"><span class="glyphicon glyphicon-search"></span></a>
+            <a href="<?php echo $fsConfig->getUrl() ?>index.php/inicio/buscar" type="submit" class="btn btn-default"><span class="glyphicon glyphicon-search"></span></a>
           </form>
 
           <ul class="nav navbar-nav navbar-right">
             <div id="rr">
-              <a href="<?php echo URL ?>index.php/inicio/iniciarController"  type="submit" class="btn btn-primary">Iniciar sesion</a>
+              <a href="<?php echo $fsConfig->getUrl() ?>index.php/inicio/iniciar"  type="submit" class="btn btn-primary">Iniciar sesion</a>
             </div>
             <div  id="tt">
-              <a href="<?php echo URL ?>index.php/inicio/registroController"  type="submit" class="btn btn-success">Registrate</a>
+              <a href="<?php echo $fsConfig->getUrl() ?>index.php/inicio/registro"  type="submit" class="btn btn-success">Registrate</a>
             </div>
           </ul>
         </div><!-- /.navbar-collapse -->
@@ -73,7 +76,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="<?php echo URL ?>index.php/inicio/indexController">BugaRoutes</a>
+          <a class="navbar-brand" href="<?php echo $fsConfig->getUrl() ?>index.php/inicio/index">BugaRoutes</a>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
@@ -96,15 +99,15 @@
             <div class="form-group">
               <input type="text" class="form-control" placeholder="Search">
             </div>
-            <a href="<?php echo URL ?>index.php/inicio/buscarController" type="submit" class="btn btn-default"><span class="glyphicon glyphicon-search"></span></a>
+            <a href="<?php echo $fsConfig->getUrl() ?>index.php/inicio/buscar" type="submit" class="btn btn-default"><span class="glyphicon glyphicon-search"></span></a>
           </form>
 
           <ul class="nav navbar-nav navbar-right">
             <div id="rr">
-              <a href="<?php echo URL ?>index.php/inicio/iniciarController"  type="submit" class="btn btn-primary">Iniciar Sesion</a>
+              <a href="<?php echo $fsConfig->getUrl() ?>index.php/inicio/iniciar"  type="submit" class="btn btn-primary">Iniciar Sesion</a>
             </div>
             <div  id="tt">
-              <a href="<?php echo URL ?>index.php/inicio/registroController"  type="submit" class="btn btn-success">Registrarse</a>
+              <a href="<?php echo $fsConfig->getUrl() ?>index.php/inicio/registro"  type="submit" class="btn btn-success">Registrarse</a>
             </div>
           </ul>
         </div><!-- /.navbar-collapse -->
@@ -126,21 +129,21 @@
         <div class="carousel-inner" role="listbox" >
           <div class="item active">
             <center>
-              <a href="<?php echo URL ?>index.php/inicio/eventosController"> <img class="img-responsive" src="<?php echo URL ?>image/3.jpg" width="1000px" height="390px"> </a>
+              <a href="<?php echo $fsConfig->getUrl() ?>index.php/inicio/eventos"> <img class="img-responsive" src="<?php echo $fsConfig->getUrl() ?>image/3.jpg" width="1000px" height="390px"> </a>
             </center>
             <div class="carousel-caption">
             </div>
           </div>
           <div class="item">
             <center>
-              <a href="<?php echo URL ?>index.php/inicio/eventosController"> <img  class="img-responsive" src="<?php echo URL ?>image/1.jpg" width="1000px" height="390px"> </a>
+              <a href="<?php echo $fsConfig->getUrl() ?>index.php/inicio/eventos"> <img  class="img-responsive" src="<?php echo $fsConfig->getUrl() ?>image/1.jpg" width="1000px" height="390px"> </a>
             </center>
             <div class="carousel-caption">
             </div>
           </div>
           <div class="item">
             <center>
-              <a href="<?php echo URL ?>index.php/inicio/eventosController"><img class="img-responsive" src="<?php echo URL ?>image/2.jpg" width="1000px" height="390px"></a>
+              <a href="<?php echo $fsConfig->getUrl() ?>index.php/inicio/eventos"><img class="img-responsive" src="<?php echo $fsConfig->getUrl() ?>image/2.jpg" width="1000px" height="390px"></a>
             </center>
             <div class="carousel-caption">
             </div>
@@ -166,28 +169,28 @@
       <div class="hidden-xs hidden-md">
         <div class="col-sm-9 col-md-4 col-xs-12">
           <div class="thumbnail">
-            <img src="<?php echo URL ?>image/CULTURA.png" width="100px" height="100px">
+            <img src="<?php echo $fsConfig->getUrl() ?>image/CULTURA.png" width="100px" height="100px">
             <div class="caption">
               <h3>Cultura</h3>
-              <p><a href="<?php echo URL ?>index.php/inicio/categoriaController" class="btn btn-primary" role="button">Ver mas</a></p>
+              <p><a href="<?php echo $fsConfig->getUrl() ?>index.php/inicio/categoria" class="btn btn-primary" role="button">Ver mas</a></p>
             </div>
           </div>
         </div>
         <div class="col-sm-9 col-md-4 col-xs-12">
           <div class="thumbnail">
-            <img src="<?php echo URL ?>image/DEPORTE.png" width="100px" height="100px">
+            <img src="<?php echo $fsConfig->getUrl() ?>image/DEPORTE.png" width="100px" height="100px">
             <div class="caption">
               <h3>Deporte</h3>
-              <p><a href="<?php echo URL ?>index.php/inicio/categoriaController" class="btn btn-primary" role="button">Ver mas</a></p>
+              <p><a href="<?php echo $fsConfig->getUrl() ?>index.php/inicio/categoria" class="btn btn-primary" role="button">Ver mas</a></p>
             </div>
           </div>
         </div>
         <div class="col-sm-9 col-md-4 col-xs-12">
           <div class="thumbnail">
-            <img src="<?php echo URL ?>image/HISTORIA.png" width="100px" height="100px">
+            <img src="<?php echo $fsConfig->getUrl() ?>image/HISTORIA.png" width="100px" height="100px">
             <div class="caption">
               <h3>Historia</h3>
-              <p><a href="<?php echo URL ?>index.php/inicio/categoriaController" class="btn btn-primary" role="button">Ver mas</a></p>
+              <p><a href="<?php echo $fsConfig->getUrl() ?>index.php/inicio/categoria" class="btn btn-primary" role="button">Ver mas</a></p>
             </div>
           </div>
         </div>
@@ -197,28 +200,28 @@
       <div class="visible-xs visible-md">
         <div class="col-sm-12 col-md-4 col-xs-12">
           <div class="thumbnail">
-            <img src="<?php echo URL ?>image/CULTURA.png" width="100px" height="100px">
+            <img src="<?php echo $fsConfig->getUrl() ?>image/CULTURA.png" width="100px" height="100px">
             <div class="caption">
               <h3>Cultura</h3>
-              <p><a href="<?php echo URL ?>index.php/inicio/categoriaController" class="btn btn-primary" role="button">Ver mas</a></p>
+              <p><a href="<?php echo $fsConfig->getUrl() ?>index.php/inicio/categoria" class="btn btn-primary" role="button">Ver mas</a></p>
             </div>
           </div>
         </div>
         <div class="col-sm-12 col-md-4 col-xs-12">
           <div class="thumbnail">
-            <img src="<?php echo URL ?>image/DEPORTE.png" width="100px" height="100px">
+            <img src="<?php echo $fsConfig->getUrl() ?>image/DEPORTE.png" width="100px" height="100px">
             <div class="caption">
               <h3>Deporte</h3>
-              <p><a href="<?php echo URL ?>index.php/inicio/categoriaController" class="btn btn-primary" role="button">Ver mas</a></p>
+              <p><a href="<?php echo $fsConfig->getUrl() ?>index.php/inicio/categoria" class="btn btn-primary" role="button">Ver mas</a></p>
             </div>
           </div>
         </div>
         <div class="col-sm-12 col-md-4 col-xs-12">
           <div class="thumbnail">
-            <img src="<?php echo URL ?>image/HISTORIA.png" width="100px" height="100px">
+            <img src="<?php echo $fsConfig->getUrl() ?>image/HISTORIA.png" width="100px" height="100px">
             <div class="caption">
               <h3>Historia</h3>
-              <p><a href="<?php echo URL ?>index.php/inicio/categoriaController" class="btn btn-primary" role="button">Ver mas</a></p>
+              <p><a href="<?php echo $fsConfig->getUrl() ?>index.php/inicio/categoria" class="btn btn-primary" role="button">Ver mas</a></p>
             </div>
           </div>
         </div>
@@ -228,4 +231,4 @@
 
 </div>
 </div>
-<?php include DIR . 'view/partial/foot.php' ?>
+<?php  include_once $fsConfig->getPath(). 'view/partial/foot.php' ?>

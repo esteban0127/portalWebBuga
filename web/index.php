@@ -1,29 +1,15 @@
 <?php
 
+require_once '../libs/vendor/FStudio/fsDispatch.class.php';
+require_once '../libs/vendor/FStudio/fsConfig.class.php';
+require_once '../config/myConfig.class.php';
+require_once '../config/config.php';
+
+session_name($config->getSessionName());
 session_start();
 
-include '../config/config.php';
-include '../lib/portal/controller.class.php';
-include '../lib/portal/model.class.php';
-include '../lib/portal/view.class.php';
+use FStudio\fsDispatch as dispath;
 
-try {
-  if (isset($_SERVER['PATH_INFO']) === true) {
-    $data = explode('/', $_SERVER['PATH_INFO']);
-    $modulo = $data[1];
-    $accion = $data[2];
-  } else {
-    $modulo = MODULO_DEFAULT;
-    $accion = ACCION_DEFAULT;
-  }
-  $file = DIR . 'controller/' . $modulo . '/' . $accion . '.class.php';
-  if (is_file($file) === true) {
-    include $file;
-    $accion::main();
-  } else {
-    throw new PDOException('El módulo y acción solicitados no existen');
-  }
-} catch (PDOException $exc) {
-  include '../controller/inicio/sohoException.class.php';
-  sohoException::main($exc);
-}
+$dispath = new dispath($config);
+$dispath->run();
+
