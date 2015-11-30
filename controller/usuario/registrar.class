@@ -1,0 +1,55 @@
+<?php
+require_once '../model/base/datoUsuarioBaseTable.class.php';
+require_once '../model/datoUsuarioTable.class.php';
+require_once '../model/base/usuarioBaseTable.class.php';
+require_once '../model/usuarioTable.class.php';
+
+use FStudio\fsController as controller;
+use FStudio\interfaces\fsAction as action;
+/**
+ * Description of registrar
+ *
+ * @author lizethgiraldo
+ */
+class registrar extends controller implements action {
+
+  public function execute(){
+  $config = $this->getConfig();
+  $index = $config->getUrl() . 'index.php';
+  
+  if(isset($_SESSION['user']) === true){
+    header("Location: $index");
+    exit();
+  }elseif (filter_has_var(INPUT_POST, 'registro') === true) {
+    $registro = filter_input_array(INPUT_POST) ['registro'];
+    //$this->validateInsert($registro);
+    
+    $usuario = new usuarioTable($config);
+    $usuario->setUserName($registro['user_name']);
+    $usuario->setPassword($registro['password']);
+    $usuario->save();
+    
+    $datoUsuario = new datoUsuarioTable($config);
+    $datoUsuario->setUsuarioId($usuario->getId());
+    $datoUsuario->setNombre($registro['dus_nombre']);
+    $datoUsuario->setApellidos($registro['dus_apellidos']);
+    $datoUsuario->setCorreo($registro['dus_correo']);
+    $datoUsuario->setGenero($registro['dus_genero']);
+    $datoUsuario->setFechaNacimiento($registro['dus_fecha_nacimiento']);
+    $datoUsuario->setFacebook($registro['dus_facebook']);
+    $datoUsuario->setTwitter($registro['dus_twitter']);
+    $datoUsuario->setGooglePlus($registro['dus_google_plus']);
+    $datoUsuario->setAvatar($registro['dus_avatar']);
+    $datoUsuario->save();
+    
+    
+    $_SESSION['registroSuccess']='El usuario fue registrado exitosamente';
+  }
+  header("Location: $index");
+  exit();
+  }
+  
+  private function validateInsert ($registro){
+    
+  }
+}
