@@ -4,7 +4,7 @@ use FStudio\myConfig as config;
 
 $config = new config();
 
-$config->setPath('D:/Pana/xampp/htdocs/portalWebBuga/');
+$config->setPath('c:/xampp/htdocs/portalWebBuga/');
 $config->setUrl('http://localhost/portalWebBuga/web/');
 
 $config->setDriver('mysql');
