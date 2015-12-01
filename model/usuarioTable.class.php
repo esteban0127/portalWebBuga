@@ -23,7 +23,7 @@ class usuarioTable extends usuarioBaseTable {
     return ($answer->rowCount() > 0) ? $answer->fetchAll(PDO::FETCH_OBJ) : false;
   }
   
-  public function getById($id=NULL){
+  public function getById($id = NULL){
     $conn = $this->getConnection($this->config);
     $sql = 'SELECT  usu_id AS id , usu_usuario AS usuario , usu_password AS password ,'
             . ' usu_activado AS activado , rol_id AS rol_id ,'
@@ -94,6 +94,34 @@ class usuarioTable extends usuarioBaseTable {
     $answer->execute($params);
     return true;
   }
+  
+  public function verificarUsuario() {
+    $conn = $this->getConnection($this->config);
+    $sql="SELECT usu_id FROM bdp_usuario WHERE usu_deleted_at IS NULL and  usu_activado='1' AND (usu_usuario = :usuario AND usu_password = :password)";
+    $params = array(
+      ':usuario' => $this->getUsuario(),
+      ':password' =>  $this->getPassword()
+);
+    $answer = $conn->prepare($sql);
+    $answer->execute($params);
+    return ($answer->rowCount()> 0)? true: FALSE;
+
+  }
+  
+  public function getDataByUserPassword() {
+        $conn = $this->getConnection($this->config);
+        $sql = "SELECT bdp_usuario.usu_id AS id, dus_nombre AS nombre, dus_apellidos AS apellidos FROM bdp_usuario "
+                . "INNER JOIN bdp_dato_usuario ON bdp_usuario.usu_id=bdp_dato_usuario.dus_id WHERE (bdp_usuario.usu_deleted_at "
+                . "IS NULL AND bdp_usuario.usu_activado = '1') AND bdp_dato_usuario.dus_deleted_at IS NULL "
+                . "AND (usu_usuario = :usuario AND usu_password = :password)";
+        $params = array(
+            ':usuario' => $this->getUsuario(),
+            ':password' => $this->getPassword()
+        );
+        $answer = $conn->prepare($sql);
+        $answer->execute($params);
+        return ($answer->rowCount() > 0) ? $answer->fetchAll(PDO::FETCH_OBJ)[0] : false;
+    }
 
 
 }

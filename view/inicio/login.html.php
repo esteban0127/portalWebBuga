@@ -119,14 +119,14 @@
           <center>
             <div id="letroiniciar">
               <h1 id="la">INICIAR SESIÓN</h1>
-              <form>
+              <form method="post" action="<?php echo $fsConfig->getUrl() ?>index.php/seguridad/login">
                 <div class="form-group">
-                  <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
+                  <input type="text" class="form-control" autofocus="" autocomplete="off" id="inputUsuario" name="seguridad[usuario]" placeholder="Usuario">
                 </div>
                 <div class="form-group">
-                  <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                  <input type="password" class="form-control" id="inputPass" name="seguridad[password]" placeholder="Password">
                 </div>
-                <a href="<?php echo $fsConfig->getUrl() ?>index.php/inicio/inicioUsuario" class="btn btn-success">Enviar</a>
+                <button type="submit" class="btn btn-success">Identificarse</button>
                 <a href="<?php echo $fsConfig->getUrl() ?>index.php/inicio/index" class="btn btn-danger">Cancelar</a>
               </form>
             </div>

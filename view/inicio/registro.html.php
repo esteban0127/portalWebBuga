@@ -115,52 +115,36 @@
         <div>
           <div id="registro2">
             <h1>REGISTRO</h1>
-            <form>
+            <form method="post" action="<?php echo $fsConfig->getUrl() ?>index.php/usuario/registrar">
               <div class="form-group">
-                <input type="text" class="form-control" id="usuario" placeholder="Usuario" name="usu_usuario">
+                <input type="text" autocomplete="off" autofocus=" "class="form-control"  placeholder="Usuario"  required="" id="inputUsuario" name="registro[usuario]">
               </div>
               <div class="form-group">
-                <input type="password" class="form-control" id="pass" placeholder="Password" name="usu_password">
+                <input type="password" class="form-control"  placeholder="Password"  id="inputPassword" name="registro[password]">
               </div>
               <div class="form-group">
-                <input type="text" class="form-control" id="nombre" placeholder="Nombre" name="dus_nombre">
+                <input type="text" class="form-control"  placeholder="Nombre" name="registro[nombre]" id="inputNombre">
               </div>
               <div class="form-group">
-                <input type="text" class="form-control" id="apellido" placeholder="Apellido" name="dus_apellido">
+                <input type="text" class="form-control"  placeholder="Apellido" name="registro[apellido]" id="inputApellido">
               </div>
               <div class="form-group">
-                <input type="email" class="form-control" id="correo" placeholder="Correo"name="dus_correo">
+                <input type="email" class="form-control"  placeholder="Correo"name="registro[correo]" id="inputCorreo">
               </div>
               <form>
                 <p class="genero">
                   Elija Genero:
-                  <select name="genero">
-                    <option>Hombre</option>
-                    <option>Mujer</option>
+                  <select name="registo[genero]">
+                    <option value="hombre">Hombre</option>
+                    <option value="mujer">Mujer</option>
                    
                   </select>
                 </p>
-              </form>
-              <div class="form-group">
-                <input type="date" class="form-control" id="fecha_nacimiento" placeholder="Fecha de Nacimiento" name="dus_fecha_nacimiento">
-              </div>
-              <div class="form-group">
-                <input type="email" class="form-control" id="facebook" placeholder="Facebook" name="dus_facebook">
-              </div>
-              <div class="form-group">
-                <input type="text" class="form-control" id="twitter" placeholder="Twitter" name="dus_twitter">
-              </div>
-              <div class="form-group">
-                <input type="text" class="form-control" id="googlePlus" placeholder="Google Plus" name="dus_google_plus">
-              </div>
-              <div class="form-group">
-                <input type="text" class="form-control" id="avatar" placeholder="Avatar" name="dus_avatar">
-              </div>
               <div class="form-group">
                 <label for="exampleInputFile">File input</label>
                 <input type="file" id="exampleInputFile">
               </div>
-              <a href="<?php echo $fsConfig->getUrl() ?>index.php/inicio/iniciar" class="btn btn-success">Enviar</a>
+             <input type="submit" class="btn btn-success" value="Registrar">
               <a href="<?php echo $fsConfig->getUrl() ?>index.php/inicio/index" class="btn btn-danger">Cancelar</a>
             </form>
           </div>
