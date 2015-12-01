@@ -18,7 +18,7 @@ class categoriaBaseTable extends model{
     const ACTIVO = 'cat_activo';
     const CAT = 'cat_cat';
     const CREATED_AT = 'cat_created_at';
-    const UPDATE_AT = ' cat_upstade_at';
+    const UPDATE_AT = ' cat_uptade_at';
     const DELETED_AT = 'cat_delete_at';
 
     /** 
@@ -62,15 +62,15 @@ class categoriaBaseTable extends model{
         return $this->cat;
     }
     
-    public function getCreated_at(){
+    public function getCreatedAt(){
         return $this->created_at;
     }
     
-    public function getUpdate_at(){
+    public function getUpdateAt(){
         return $this->update_at;
     }
     
-    public function getDelete_at(){
+    public function getDeleteAt(){
         return $this->delete_at;
     }
     
@@ -87,13 +87,13 @@ class categoriaBaseTable extends model{
       public function setCat($cat){
        $this->cat = $cat;
     }
-      public function setCreated_at($created_at){
+      public function setCreatedAt($created_at){
        $this->created_at = $created_at;
     }
-      public function setUpdate_at($update_at){
+      public function setUpdateAt($update_at){
        $this->update = $update_at;
     }
-      public function setDelete_at($delete_At){
+      public function setDeleteAt($delete_At){
        $this->delete_at = $delete_At;
     }
 }

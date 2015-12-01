@@ -80,22 +80,22 @@ class pqrsfBaseTable extends model{
        $this->id = $id;
     }
     
-      public function setUsu_id($usu_id){
+      public function setUsuId($usu_id){
        $this->Usu_id = $usu_id;
     }
-      public function setEst_id($est_id){
+      public function setEstId($est_id){
        $this->est_id = $est_id;
     }
-      public function setPqrsf_mensaje($pqrsf_mensaje){
+      public function setPqrsfMensaje($pqrsf_mensaje){
        $this->pqsrf_mensaje = $pqrsf_mensaje;
     }
-      public function setCreated_at($pqrsf_created_at){
+      public function setCreatedAt($pqrsf_created_at){
        $this->created_at = $pqrsf_created_at;
     }
-      public function setUpdate_at($pqrsf_update_at){
+      public function setUpdateAt($pqrsf_update_at){
        $this->update_at = $pqrsf_update_at;
     }
-      public function setDelete_at($pqrsf_delete_at){
+      public function setDeleteAt($pqrsf_delete_at){
        $this->delete_at = $pqrsf_delete_at;
     }
 }

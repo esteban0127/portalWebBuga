@@ -48,11 +48,11 @@ class estadoBaseTable extends model{
     }
     
  
-    public function getCreated_at(){
+    public function getCreatedAt(){
         return $this->created_at;
     }
     
-    public function getUpdate_at(){
+    public function getUpdateAt(){
         return $this->update_at;
     }
     
@@ -64,10 +64,10 @@ class estadoBaseTable extends model{
        $this->nombre = $est_nombre;
     }
     
-      public function setCreated_at($est_created_at){
+      public function setCreatedAt($est_created_at){
        $this->created = $est_created_at;
     }
-      public function setUpdate_at($est_update_at){
+      public function setUpdateAt($est_update_at){
        $this->update = $est_update_at;
     }
 }
