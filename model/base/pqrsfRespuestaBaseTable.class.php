@@ -62,15 +62,15 @@ class pqrsfRespuesta extends model {
       return $this->respuesta;
     }
 
-    function getCreated_at() {
+    function getCreatedAt() {
       return $this->created_at;
     }
 
-    function getUpdated_at() {
+    function getUpdatedAt() {
       return $this->updated_at;
     }
 
-    function getDeleted_at() {
+    function getDeletedAt() {
       return $this->deleted_at;
     }
 
@@ -82,25 +82,25 @@ class pqrsfRespuesta extends model {
       $this->pqrsf = $pqrsf;
     }
     
-    function setEvento_id($usuario) {
+    function setEventoId($usuario) {
       $this->usuario = $usuario;
     }
 
 
-    function setSitio_id($respuesta) {
+    function setSitioId($respuesta) {
       $this->respuesta = $respuesta;
     }
 
-    function setCreated_at($created_at) {
-      $this->created_at = $created_at;
+    function setCreatedAt($created) {
+      $this->created = $created;
     }
 
-    function setUpdated_at($updated_at) {
-      $this->updated_at = $updated_at;
+    function setUpdatedAt($updated) {
+      $this->updated = $updated;
     }
 
-    function setDeleted_at($deleted_at) {
-      $this->deleted_at = $deleted_at;
+    function setDeletedAt($deleted) {
+      $this->deleted = $deleted;
     }
 
   
