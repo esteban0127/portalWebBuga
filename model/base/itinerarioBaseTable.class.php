@@ -13,12 +13,13 @@ use portarWebBuga\myConfig as config;
 class itinerarioTable extends model{
   
   const ID = 'iti_id';
-  const USUARIO = 'usu_id';
-  const SIT = 'sit_id';
+  const USUARIO_ID = 'usu_id';
+  const SITIO_ID = 'sit_id';
   const POSICION = 'iti_posicion';
   const CREATED_AT = 'iti_created_at';
   const UPDATED_AT = 'iti_updated_at';
   const DELETED_AT = 'iti_deleted_at';
+  const _TABLE = 'bdp_itinerario';
   
   
   /**

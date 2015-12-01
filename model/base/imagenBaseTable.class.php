@@ -13,10 +13,11 @@ use portarWebBuga\myConfig as config;
 class imagenBaseTable extends model {
   
   const ID = 'img_id';
-  const EVE = 'eve_id';
-  const SIT = 'sit_id';
+  const EVENTO_ID = 'eve_id';
+  const SITIO_ID = 'sit_id';
   const RUTA = 'img_ruta';
   const CREATED_AT = 'img_created_at';
+  const _TABLE = 'bdp_imagen';
   
   
   /**

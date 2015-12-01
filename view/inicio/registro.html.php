@@ -117,16 +117,50 @@
             <h1>REGISTRO</h1>
             <form>
               <div class="form-group">
-                <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
+                <input type="text" class="form-control" id="usuario" placeholder="Usuario" name="usu_usuario">
               </div>
               <div class="form-group">
-                <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                <input type="password" class="form-control" id="pass" placeholder="Password" name="usu_password">
+              </div>
+              <div class="form-group">
+                <input type="text" class="form-control" id="nombre" placeholder="Nombre" name="dus_nombre">
+              </div>
+              <div class="form-group">
+                <input type="text" class="form-control" id="apellido" placeholder="Apellido" name="dus_apellido">
+              </div>
+              <div class="form-group">
+                <input type="email" class="form-control" id="correo" placeholder="Correo"name="dus_correo">
+              </div>
+              <form>
+                <p class="genero">
+                  Elija Genero:
+                  <select name="genero">
+                    <option>Hombre</option>
+                    <option>Mujer</option>
+                   
+                  </select>
+                </p>
+              </form>
+              <div class="form-group">
+                <input type="date" class="form-control" id="fecha_nacimiento" placeholder="Fecha de Nacimiento" name="dus_fecha_nacimiento">
+              </div>
+              <div class="form-group">
+                <input type="email" class="form-control" id="facebook" placeholder="Facebook" name="dus_facebook">
+              </div>
+              <div class="form-group">
+                <input type="text" class="form-control" id="twitter" placeholder="Twitter" name="dus_twitter">
+              </div>
+              <div class="form-group">
+                <input type="text" class="form-control" id="googlePlus" placeholder="Google Plus" name="dus_google_plus">
+              </div>
+              <div class="form-group">
+                <input type="text" class="form-control" id="avatar" placeholder="Avatar" name="dus_avatar">
               </div>
               <div class="form-group">
                 <label for="exampleInputFile">File input</label>
                 <input type="file" id="exampleInputFile">
               </div>
-               <a href="<?php echo $fsConfig->getUrl() ?>index.php/inicio/iniciar" class="btn btn-success">Enviar</a>
+              <a href="<?php echo $fsConfig->getUrl() ?>index.php/inicio/iniciar" class="btn btn-success">Enviar</a>
               <a href="<?php echo $fsConfig->getUrl() ?>index.php/inicio/index" class="btn btn-danger">Cancelar</a>
             </form>
           </div>
@@ -135,4 +169,4 @@
     </div>
   </div>
 </div>
-<?php include_once $fsConfig->getPath(). 'view/partial/foot.php' ?>
+<?php include_once $fsConfig->getPath() . 'view/partial/foot.php' ?>
