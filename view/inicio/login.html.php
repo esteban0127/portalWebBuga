@@ -1,11 +1,11 @@
-<?php include DIR . 'view/partial/head.php' ?>
-<link rel="stylesheet" href="<?php echo URL ?>css/exception.css">
+<?php include_once $fsConfig->getPath() . 'view/partial/head.php' ?>
+<link rel="stylesheet" href="<?php echo $fsConfig->getUrl() ?>css/exception.css">
 <div class="container container-fluid ">
   <div>
     <div class="row">
       <div  class="col-md-12 col-sm-12 col-xs-12">
 
-        <a class="aa" href="<?php echo URL ?>index.php/inicio/indexController" class="btn btn-danger"> <img class="img-responsive" src="<?php echo URL ?>image/banner.jpg"></a>
+        <a class="aa" href="<?php echo $fsConfig->getUrl() ?>index.php/inicio/index" class="btn btn-danger"> <img class="img-responsive" src="<?php echo $fsConfig->getUrl() ?>image/banner.jpg"></a>
 
       </div>
     </div>
@@ -23,7 +23,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="<?php echo URL ?>index.php/inicio/indexController">BugaRoutes</a>
+          <a class="navbar-brand" href="<?php echo $fsConfig->getUrl() ?>index.php/inicio/index">BugaRoutes</a>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
@@ -46,15 +46,15 @@
             <div class="form-group">
               <input type="text" class="form-control" placeholder="Search">
             </div>
-            <a href="<?php echo URL ?>index.php/inicio/buscarController" type="submit" class="btn btn-default"><span class="glyphicon glyphicon-search"></span></a>
+            <a href="<?php echo $fsConfig->getUrl() ?>index.php/inicio/buscar" type="submit" class="btn btn-default"><span class="glyphicon glyphicon-search"></span></a>
           </form>
 
           <ul class="nav navbar-nav navbar-right">
             <div id="rr">
-              <a href="<?php echo URL ?>index.php/inicio/iniciarController"  type="submit" class="btn btn-primary invisible">Iniciar sesion</a>
+              <a href="<?php echo $fsConfig->getUrl() ?>index.php/inicio/iniciar"  type="submit" class="btn btn-primary invisible">Iniciar sesion</a>
             </div>
             <div  id="tt">
-              <a href="<?php echo URL ?>index.php/inicio/registroController"  type="submit" class="btn btn-success">Registrate</a>
+              <a href="<?php echo $fsConfig->getUrl() ?>index.php/inicio/registro"  type="submit" class="btn btn-success">Registrate</a>
             </div>
           </ul>
         </div><!-- /.navbar-collapse -->
@@ -73,7 +73,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="<?php echo URL ?>index.php/inicio/indexController">BugaRoutes</a>
+          <a class="navbar-brand" href="<?php echo $fsConfig->getUrl() ?>index.php/inicio/index">BugaRoutes</a>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
@@ -96,15 +96,15 @@
             <div class="form-group">
               <input type="text" class="form-control" placeholder="Search">
             </div>
-            <a href="<?php echo URL ?>index.php/inicio/buscarController" type="submit" class="btn btn-default"><span class="glyphicon glyphicon-search"></span></a>
+            <a href="<?php echo $fsConfig->getUrl() ?>index.php/inicio/buscar" type="submit" class="btn btn-default"><span class="glyphicon glyphicon-search"></span></a>
           </form>
 
           <ul class="nav navbar-nav navbar-right">
             <div id="rr">
-              <a href="<?php echo URL ?>index.php/inicio/iniciarController"  type="submit" class="btn btn-primary invisible">Iniciar Sesion</a>
+              <a href="<?php echo $fsConfig->getUrl() ?>index.php/inicio/iniciar"  type="submit" class="btn btn-primary invisible">Iniciar Sesion</a>
             </div>
             <div  id="tt">
-              <a href="<?php echo URL ?>index.php/inicio/registroController"  type="submit" class="btn btn-success">Registrarse</a>
+              <a href="<?php echo $fsConfig->getUrl() ?>index.php/inicio/registro"  type="submit" class="btn btn-success">Registrarse</a>
             </div>
           </ul>
         </div><!-- /.navbar-collapse -->
@@ -126,8 +126,8 @@
                 <div class="form-group">
                   <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
                 </div>
-                <a href="<?php echo URL ?>index.php/inicio/inicioUsuarioController" class="btn btn-success">Enviar</a>
-                <a href="<?php echo URL ?>index.php/inicio/indexController" class="btn btn-danger">Cancelar</a>
+                <a href="<?php echo $fsConfig->getUrl() ?>index.php/inicio/inicioUsuario" class="btn btn-success">Enviar</a>
+                <a href="<?php echo $fsConfig->getUrl() ?>index.php/inicio/index" class="btn btn-danger">Cancelar</a>
               </form>
             </div>
           </center>
@@ -136,4 +136,4 @@
   </div>
 </center>
 </div>
-<?php include DIR . 'view/partial/foot.php' ?>
+<?php  include_once $fsConfig->getPath(). 'view/partial/foot.php' ?>
