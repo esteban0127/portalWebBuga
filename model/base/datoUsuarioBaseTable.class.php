@@ -11,10 +11,10 @@
  *
  * @author Harold
  */
-namespace portalWebBuga\model\base;
+namespace FStudio\model\base;
 
-use portalWebBuga\fsModel as model;
-use portalWebBuga\myConfig as config;
+use FStudio\fsModel as model;
+use FStudio\myConfig as config;
 
 class datoUsuarioBaseTable extends model {
   const ID='dus_id';
@@ -82,7 +82,7 @@ class datoUsuarioBaseTable extends model {
     return $this->id;
   }
 
-  function getUsuario_id() {
+  function getUsuarioId() {
     return $this->usuario_id;
   }
 
@@ -102,7 +102,7 @@ class datoUsuarioBaseTable extends model {
     return $this->genero;
   }
 
-  function getFecha_nacimiento() {
+  function getFechaNacimiento() {
     return $this->fecha_nacimiento;
   }
 
@@ -114,7 +114,7 @@ class datoUsuarioBaseTable extends model {
     return $this->twitter;
   }
 
-  function getGoogle_plus() {
+  function getGooglePlus() {
     return $this->google_plus;
   }
 
@@ -122,15 +122,15 @@ class datoUsuarioBaseTable extends model {
     return $this->avatar;
   }
 
-  function getCreated_at() {
+  function getCreatedAt() {
     return $this->created_at;
   }
 
-  function getUpdate_at() {
+  function getUpdateAt() {
     return $this->update_at;
   }
 
-  function getDeleted_at() {
+  function getDeletedAt() {
     return $this->deleted_at;
   }
 
@@ -138,7 +138,7 @@ class datoUsuarioBaseTable extends model {
     $this->id = $id;
   }
 
-  function setUsuario_id($usuario_id) {
+  function setUsuarioId($usuario_id) {
     $this->usuario_id = $usuario_id;
   }
 
@@ -158,7 +158,7 @@ class datoUsuarioBaseTable extends model {
     $this->genero = $genero;
   }
 
-  function setFecha_nacimiento($fecha_nacimiento) {
+  function setFechaNacimiento($fecha_nacimiento) {
     $this->fecha_nacimiento = $fecha_nacimiento;
   }
 
@@ -170,7 +170,7 @@ class datoUsuarioBaseTable extends model {
     $this->twitter = $twitter;
   }
 
-  function setGoogle_plus($google_plus) {
+  function setGooglePlus($google_plus) {
     $this->google_plus = $google_plus;
   }
 
@@ -178,15 +178,15 @@ class datoUsuarioBaseTable extends model {
     $this->avatar = $avatar;
   }
 
-  function setCreated_at($created_at) {
+  function setCreatedAt($created_at) {
     $this->created_at = $created_at;
   }
 
-  function setUpdate_at($update_at) {
+  function setUpdateAt($update_at) {
     $this->update_at = $update_at;
   }
 
-  function setDeleted_at($deleted_at) {
+  function setDeletedAt($deleted_at) {
     $this->deleted_at = $deleted_at;
   }
 

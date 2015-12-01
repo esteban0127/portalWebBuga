@@ -68,19 +68,19 @@ class usuarioBaseTable extends model {
     return $this->activado;
   }
 
-  function getRol_id() {
+  function getRolId() {
     return $this->rol_id;
   }
 
-  function getCreated_at() {
+  function getCreatedAt() {
     return $this->created_at;
   }
 
-  function getUpdate_at() {
+  function getUpdateAt() {
     return $this->update_at;
   }
 
-  function getDeletd_at() {
+  function getDeletdAt() {
     return $this->deletd_at;
   }
 
@@ -100,19 +100,19 @@ class usuarioBaseTable extends model {
     $this->activado = $activado;
   }
 
-  function setRol_id($rol_id) {
+  function setRolId($rol_id) {
     $this->rol_id = $rol_id;
   }
 
-  function setCreated_at($created_at) {
+  function setCreatedAt($created_at) {
     $this->created_at = $created_at;
   }
 
-  function setUpdate_at($update_at) {
+  function setUpdateAt($update_at) {
     $this->update_at = $update_at;
   }
 
-  function setDeletd_at($deletd_at) {
+  function setDeletdAt($deletd_at) {
     $this->deletd_at = $deletd_at;
   }
 

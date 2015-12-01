@@ -6,7 +6,7 @@
  *
  * @author Harold
  */
-use portalWebBuga\model\base\datoUsuarioBaseTable;
+use FStudio\model\base\datoUsuarioBaseTable;
 
 class datoUsuarioTable extends datoUsuarioBaseTable {
   

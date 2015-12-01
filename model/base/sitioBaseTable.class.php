@@ -12,10 +12,10 @@
  * @author Harold
  */
 
-namespace portalWebBuga\model\base;
+namespace FStudio\model\base;
 
-use portalWebBuga\fsModel as model;
-use portalWebBuga\myConfig as config;
+use FStudio\fsModel as model;
+use FStudio\myConfig as config;
 
 class sitioBaseTable extends model{
   const ID = 'sit_id';
@@ -95,7 +95,7 @@ class sitioBaseTable extends model{
     return $this->descripcion;
   }
 
-  function getCategoria_id() {
+  function getCategoriaId() {
     return $this->categoria_id;
   }
 
@@ -115,7 +115,7 @@ class sitioBaseTable extends model{
     return $this->longitud;
   }
 
-  function getEstado_id() {
+  function getEstadoId() {
     return $this->estado_id;
   }
 
@@ -127,19 +127,19 @@ class sitioBaseTable extends model{
     return $this->twitter;
   }
 
-  function getGoogle_plus() {
+  function getGooglePlus() {
     return $this->google_plus;
   }
 
-  function getCreated_at() {
+  function getCreatedAt() {
     return $this->created_at;
   }
 
-  function getUpdate_at() {
+  function getUpdateAt() {
     return $this->update_at;
   }
 
-  function getDeleted_at() {
+  function getDeletedAt() {
     return $this->deleted_at;
   }
 
@@ -155,7 +155,7 @@ class sitioBaseTable extends model{
     $this->descripcion = $descripcion;
   }
 
-  function setCategoria_id($categoria_id) {
+  function setCategoriaId($categoria_id) {
     $this->categoria_id = $categoria_id;
   }
 
@@ -175,7 +175,7 @@ class sitioBaseTable extends model{
     $this->longitud = $longitud;
   }
 
-  function setEstado_id($estado_id) {
+  function setEstadoId($estado_id) {
     $this->estado_id = $estado_id;
   }
 
@@ -187,19 +187,19 @@ class sitioBaseTable extends model{
     $this->twitter = $twitter;
   }
 
-  function setGoogle_plus($google_plus) {
+  function setGooglePlus($google_plus) {
     $this->google_plus = $google_plus;
   }
 
-  function setCreated_at($created_at) {
+  function setCreatedAt($created_at) {
     $this->created_at = $created_at;
   }
 
-  function setUpdate_at($update_at) {
+  function setUpdateAt($update_at) {
     $this->update_at = $update_at;
   }
 
-  function setDeleted_at($deleted_at) {
+  function setDeletedAt($deleted_at) {
     $this->deleted_at = $deleted_at;
   }
 

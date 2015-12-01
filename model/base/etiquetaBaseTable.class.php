@@ -54,23 +54,23 @@ class etiquetaBaseTables extends model {
       return $this->nombre;
     }
 
-    function getSitio_id() {
+    function getSitioId() {
       return $this->sitio_id;
     }
 
-    function getEvento_id() {
+    function getEventoId() {
       return $this->evento_id;
     }
 
-    function getCreated_at() {
+    function getCreatedAt() {
       return $this->created_at;
     }
 
-    function getUpdated_at() {
+    function getUpdatedAt() {
       return $this->updated_at;
     }
 
-    function getDeleted_at() {
+    function getDeletedAt() {
       return $this->deleted_at;
     }
 
@@ -82,23 +82,23 @@ class etiquetaBaseTables extends model {
       $this->nombre = $nombre;
     }
 
-    function setSitio_id($sitio_id) {
+    function setSitioId($sitio_id) {
       $this->sitio_id = $sitio_id;
     }
 
-    function setEvento_id($evento_id) {
+    function setEventoId($evento_id) {
       $this->evento_id = $evento_id;
     }
 
-    function setCreated_at($created_at) {
+    function setCreatedAt($created_at) {
       $this->created_at = $created_at;
     }
 
-    function setUpdated_at($updated_at) {
+    function setUpdatedAt($updated_at) {
       $this->updated_at = $updated_at;
     }
 
-    function setDeleted_at($deleted_at) {
+    function setDeletedAt($deleted_at) {
       $this->deleted_at = $deleted_at;
     }
 

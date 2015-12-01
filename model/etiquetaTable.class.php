@@ -7,7 +7,7 @@
  * @author Harold
  */
 
-use portalWebBuga\model\base\etiquetaBaseTable;
+use FStudio\model\base\etiquetaBaseTable;
 
 class etiquetaTable extends etiquetaBaseTable{
   
