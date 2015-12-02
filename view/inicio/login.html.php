@@ -130,10 +130,14 @@
                 <a href="<?php echo $fsConfig->getUrl() ?>index.php/inicio/index" class="btn btn-danger">Cancelar</a>
               </form>
             </div>
+            <?php if (isset($_SESSION['usuarioInvalido']) === true): ?>
+              <div class="alert alert-danger" role="alert"><?php echo $_SESSION['usuarioInvalido'] ?></div>
+              <?php unset($_SESSION['usuarioInvalido']) ?>
+            <?php endif ?>
           </center>
         </div>
     </div>
   </div>
 </center>
 </div>
-<?php  include_once $fsConfig->getPath(). 'view/partial/foot.php' ?>
+<?php include_once $fsConfig->getPath() . 'view/partial/foot.php' ?>
