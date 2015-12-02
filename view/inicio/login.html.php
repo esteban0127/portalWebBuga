@@ -134,6 +134,10 @@
               <div class="alert alert-danger" role="alert"><?php echo $_SESSION['usuarioInvalido'] ?></div>
               <?php unset($_SESSION['usuarioInvalido']) ?>
             <?php endif ?>
+            <?php if (isset($_SESSION['registroSuccess']) === true): ?>
+              <div class="alert alert-success" role="alert"><?php echo $_SESSION['registroSuccess'] ?></div>
+              <?php unset($_SESSION['registroSuccess']) ?>
+            <?php endif ?>
           </center>
         </div>
     </div>

@@ -42,10 +42,11 @@ class usuarioTable extends usuarioBaseTable {
 
   public function save() {
     $conn = $this->getConnection($this->config);
-    $sql = 'INSER INTO bdp_usuario'
-            . '(usu_usuario, usu_password,usu_activado,rol_id)'
-            . 'VALUES (:id,:usuario,:password,:activado,:rol_id)';
+    $sql = 'INSERT INTO bdp_usuario'
+            . '(usu_id,usu_usuario, usu_password,usu_activado,rol_id)'
+            . 'VALUES(:id,:usuario,:password,:activado,:rol_id)';
     $params = array(
+        ':id'=> $this->nextId(),
         ':usuario' => $this->getUsuario(),
         ':password' => $this->getPassword(),
         ':activado' => $this->getActivado(),
@@ -54,7 +55,7 @@ class usuarioTable extends usuarioBaseTable {
     $answer = $conn->prepare($sql);
     $answer->execute($params);
     //return ($answer->rowCount() > 0) ? $answer->fetchAll(PDO::FETCH_OBJ) : false;
-    $this->setId($conn->lastInsertId());
+    $this->setId($params[':id']);
     return TRUE;
   }
 
@@ -122,5 +123,14 @@ class usuarioTable extends usuarioBaseTable {
     $answer->execute($params);
     return ($answer->rowCount() > 0) ? $answer->fetchAll(PDO::FETCH_OBJ)[0] : false;
   }
+  
+   public function nextId() {
+        $conn = $this->getConnection($this->config);
+        $sql = 'SELECT IFNULL(MAX(usu_id),0)+1 AS id FROM bdp_usuario ORDER BY id DESC LIMIT 1';
+        $answer = $conn->prepare($sql);
+        $answer->execute();
+        $answer = $answer->fetchAll(PDO::FETCH_OBJ);
+        return $answer[0]->id;
+    }
 
 }

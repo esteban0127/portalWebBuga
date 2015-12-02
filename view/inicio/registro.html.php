@@ -70,7 +70,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="<?php echo $fsConfig->getUrl() ?>index.php/inicio/indexController">BugaRoutes</a>
+          <a class="navbar-brand" href="<?php echo $fsConfig->getUrl() ?>index.php/inicio/index">BugaRoutes</a>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
@@ -115,37 +115,57 @@
         <div>
           <div id="registro2">
             <h1>REGISTRO</h1>
-            <form method="post" action="<?php echo $fsConfig->getUrl() ?>index.php/usuario/registrar">
+            <legend>Usuario</legend>
+            <form method="post" action="<?php echo $fsConfig->getUrl()?>index.php/usuario/registrar">
               <div class="form-group">
                 <input type="text" autocomplete="off" autofocus=" "class="form-control"  placeholder="Usuario"  required="" id="inputUsuario" name="registro[usuario]">
               </div>
               <div class="form-group">
-                <input type="password" class="form-control"  placeholder="Password"  id="inputPassword" name="registro[password]">
+                <input type="password" autocomplete="off" class="form-control"  placeholder="Password"  id="inputPassword" name="registro[password]">
               </div>
               <div class="form-group">
-                <input type="text" class="form-control"  placeholder="Nombre" name="registro[nombre]" id="inputNombre">
+                <input type="password" autocomplete="off" class="form-control"  placeholder="Repetir Password"  id="inputPassword" name="registro[password2]">
+              </div>
+              <legend>Datos de usuario</legend>
+              <div class="form-group">
+                <input type="text" autocomplete="off" class="form-control"  placeholder="Nombre" name="registro[nombre]" id="inputNombre">
               </div>
               <div class="form-group">
-                <input type="text" class="form-control"  placeholder="Apellido" name="registro[apellido]" id="inputApellido">
+                <input type="text" class="form-control" autocomplete="off"  placeholder="Apellido" name="registro[apellido]" id="inputApellido">
               </div>
               <div class="form-group">
-                <input type="email" class="form-control"  placeholder="Correo"name="registro[correo]" id="inputCorreo">
+                <input type="email"  autocomplete="off" class="form-control"  placeholder="Correo" name="registro[correo]" id="inputCorreo">
               </div>
-              <form>
-                <p class="genero">
-                  Elija Genero:
-                  <select name="registo[genero]">
-                    <option value="hombre">Hombre</option>
-                    <option value="mujer">Mujer</option>
-                   
-                  </select>
-                </p>
+                <div class="radio-inline">
+                  <label>
+                  <input required="" type="radio" name="registro[genero]" value="h">
+                  Hombre
+                  </label>
+              </div>
+                <div class="radio-inline">
+                  <label>
+                  <input required="" type="radio" name="registro[genero]" value="f">
+                  Mujer
+                  </label>
+              </div>
               <div class="form-group">
                 <label for="exampleInputFile">File input</label>
-                <input type="file" id="exampleInputFile">
+                <input type="file" id="inputAvatar" name="registro[avatar]">
+              </div>
+              <div class="form-group">
+                <input type="date"  autocomplete="off" class="form-control"  placeholder="Fecha nacimiento" name="registro[fecha]" id="inputFecha">
+              </div>
+              <div class="form-group">
+                <input type="text"  autocomplete="off" class="form-control"  placeholder="Facebook" name="registro[facebook]" id="inputFacebook">
+              </div>
+              <div class="form-group">
+                <input type="text"  autocomplete="off" class="form-control"  placeholder="Twitter" name="registro[twitter]" id="inputTwitter">
+              </div>
+              <div class="form-group">
+                <input type="text"  autocomplete="off" class="form-control"  placeholder="Google Plus" name="registro[google]" id="inputGoogle">
               </div>
              <input type="submit" class="btn btn-success" value="Registrar">
-              <a href="<?php echo $fsConfig->getUrl() ?>index.php/inicio/index" class="btn btn-danger">Cancelar</a>
+              <a href="<?php echo $fsConfig->getUrl() ?>index.php/inicio/iniciar" class="btn btn-danger">Cancelar</a>
             </form>
           </div>
         </div>

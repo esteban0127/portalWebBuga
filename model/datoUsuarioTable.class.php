@@ -47,17 +47,18 @@ class datoUsuarioTable extends datoUsuarioBaseTable {
   
   public function save() {
      $conn = $this->getConnection($this->config);
-    $sql = 'INSER INTO bdp_dato_usuario'
+    $sql = 'INSERT INTO bdp_dato_usuario'
             . '(dus_id,usu_id,dus_nombre,dus_apellidos,dus_correo,dus_genero,dus_fecha_nacimiento,dus_facebook,dus_twitter,dus_google_plus,dus_avatar)'
             . 'VALUES (:id,:usuario_id,:nombre,:apellidos,:correo,:genero,:fecha_nacimiento,:facebook,'
             . ':twitter,:google_plus,:avatar)';
     $params = array(
+        ':id'=>  $this->getId(),
         ':usuario_id'=>  $this->getUsuarioId(),
         ':nombre' => $this->getNombre(),
         ':apellidos' => $this->getApellidos(),
         ':correo' =>  $this->getCorreo(),
         ':genero' =>  $this->getGenero(),
-        ':fecha_nacimiento' =>  $this->getFechaNacimiento(),
+        ':fecha_nacimiento' => $this->getFechaNacimiento(),
         ':facebook' =>  $this->getFacebook(),
         ':twitter' =>  $this->getTwitter(),
         ':google_plus' =>  $this->getGooglePlus(),
@@ -66,7 +67,7 @@ class datoUsuarioTable extends datoUsuarioBaseTable {
     $answer = $conn->prepare($sql);
     $answer->execute($params);
     //return ($answer->rowCount() > 0) ? $answer->fetchAll(PDO::FETCH_OBJ) : false;
-    $this->setId($conn->lastInsertId());
+    $this->setId($params[':id']);
     return TRUE;
    }
    
@@ -114,9 +115,9 @@ class datoUsuarioTable extends datoUsuarioBaseTable {
     return true;
   }
   
-  public function nextId() {
+  public function nextId2() {
         $conn = $this->getConnection($this->config);
-        $sql = 'SELECT IFNULL(MAX(dus_id),0)+1 AS id FROM bdp_dato_usuario ORDER BY id DESC LIMIT 1';
+        $sql = 'SELECT ifnull(max(dus_id)+1,0 +1) AS id FROM bdp_dato_usuario ORDER BY id DESC LIMIT 1';
         $answer = $conn->prepare($sql);
         $answer->execute();
         $answer = $answer->fetchAll(PDO::FETCH_OBJ);
