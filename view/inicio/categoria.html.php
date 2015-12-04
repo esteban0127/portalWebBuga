@@ -1,6 +1,6 @@
 <?php include_once $fsConfig->getPath() . 'view/partial/head.php' ?>
-
 <link rel="stylesheet" href="<?php echo $fsConfig->getUrl() ?>css/exception.css">
+
 <div class="container container-fluid ">
   <div>
     <div class="row">
@@ -11,8 +11,7 @@
       </div>
     </div>
   </DIV>
-
-<?php if (isset($_SESSION['user']) === FALSE): ?>
+  <?php if (isset($_SESSION['user']) === FALSE): ?>
   <div class="hidden-lg visible-md visible-xs visible-sm">
     <nav class="navbar navbar-inverse ">
       <div class="container-fluid col-md-12 col-sm-12 col-xs-12 col-lg-12" >
@@ -219,121 +218,28 @@
     </nav>
   </div>
   <?php endif ?>
-
-  <div id="carro" >
-    <div>
-      <div id="carousel-example-generic" class=" col-lg-12 carousel slide container" class="slider" data-ride="carousel"  >
-        <!-- Indicators -->
-        <ol class="carousel-indicators">
-          <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
-          <li data-target="#carousel-example-generic" data-slide-to="1"></li>
-          <li data-target="#carousel-example-generic" data-slide-to="2"></li>
-        </ol>
-
-        <!-- Wrapper for slides -->
-        <div class="carousel-inner" role="listbox" >
-          <div class="item active">
-            <center>
-              <a href="<?php echo $fsConfig->getUrl() ?>index.php/inicio/eventos"> <img class="img-responsive" src="<?php echo $fsConfig->getUrl() ?>image/3.jpg" width="1000px" height="390px"> </a>
-            </center>
-            <div class="carousel-caption">
-            </div>
-          </div>
-          <div class="item">
-            <center>
-              <a href="<?php echo $fsConfig->getUrl() ?>index.php/inicio/eventos"> <img  class="img-responsive" src="<?php echo $fsConfig->getUrl() ?>image/1.jpg" width="1000px" height="390px"> </a>
-            </center>
-            <div class="carousel-caption">
-            </div>
-          </div>
-          <div class="item">
-            <center>
-              <a href="<?php echo $fsConfig->getUrl() ?>index.php/inicio/eventos"><img class="img-responsive" src="<?php echo $fsConfig->getUrl() ?>image/2.jpg" width="1000px" height="390px"></a>
-            </center>
-            <div class="carousel-caption">
-            </div>
-          </div>
-        </div>
-
-
-        <!-- Controls -->
-        <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
-          <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-          <span class="sr-only">Previous</span>
-        </a>
-        <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
-          <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-          <span class="sr-only">Next</span>
-        </a>
+  <div class="hotel">
+    <h1>Categoria Cultural</h1>
+    <div style="margin-top:30px; " class="row">
+      <div class="col-sm-8 col-md-6">
+        <a href="<?php echo $fsConfig->getUrl() ?>index.php/inicio/sitio"> <img src="<?php echo $fsConfig->getUrl() ?>image/cat2.jpg" width="400px" height="210px" style="margin-left: 10px;margin-bottom: 10px;" class="img-responsive"></a>
+      </div>
+      <div class="col-sm-8 col-md-4">
+        <a class="cat1" href="<?php echo $fsConfig->getUrl() ?>index.php/inicio/sitio">TEATRO MUNICIPAL ERNESTO SALCEDO OSPINA</a>
+        <p>Por su arquitectura colonial californiana, el Hotel Guadalajara es considerado patrimonio arquitectónico del Departamento del Valle del Cauca, por lo que es punto de encuentro y sitio obligado de visita para todos los vallecaucanos. Ideal para vacaciones, recreación, negocios o sencillamente para buscar paz y tranquilidad.</p>
+      </div>
+    </div>
+    <div style="margin-top:30px; " class="row">
+      <div class="col-sm-8 col-md-6">
+        <a href="<?php echo $fsConfig->getUrl() ?>index.php/inicio/sitio">  <img src="<?php echo $fsConfig->getUrl() ?>image/cat3.jpg" width="400px" height="210px" style="margin-left: 10px;margin-bottom: 10px;" class="img-responsive"></a>
+      </div>
+      <div class="col-sm-8 col-md-4">
+        <a class="cat1" href="<?php echo $fsConfig->getUrl() ?>index.php/inicio/sitio">CASA DE LA CULTURA</a>
+        <p>Por su arquitectura colonial californiana, el Hotel Guadalajara es considerado patrimonio arquitectónico del Departamento del Valle del Cauca, por lo que es punto de encuentro y sitio obligado de visita para todos los vallecaucanos. Ideal para vacaciones, recreación, negocios o sencillamente para buscar paz y tranquilidad.</p>
       </div>
     </div>
   </div>
-
-  <div>
-    <center>
-      <div class="hidden-xs hidden-md">
-        <div class="col-sm-9 col-md-4 col-xs-12">
-          <div class="thumbnail">
-            <img src="<?php echo $fsConfig->getUrl() ?>image/CULTURA.png" width="100px" height="100px">
-            <div class="caption">
-              <h3>Cultura</h3>
-              <p><a href="<?php echo $fsConfig->getUrl() ?>index.php/inicio/categoria" class="btn btn-primary" role="button">Ver mas</a></p>
-            </div>
-          </div>
-        </div>
-        <div class="col-sm-9 col-md-4 col-xs-12">
-          <div class="thumbnail">
-            <img src="<?php echo $fsConfig->getUrl() ?>image/DEPORTE.png" width="100px" height="100px">
-            <div class="caption">
-              <h3>Deporte</h3>
-              <p><a href="<?php echo $fsConfig->getUrl() ?>index.php/inicio/categoria" class="btn btn-primary" role="button">Ver mas</a></p>
-            </div>
-          </div>
-        </div>
-        <div class="col-sm-9 col-md-4 col-xs-12">
-          <div class="thumbnail">
-            <img src="<?php echo $fsConfig->getUrl() ?>image/HISTORIA.png" width="100px" height="100px">
-            <div class="caption">
-              <h3>Historia</h3>
-              <p><a href="<?php echo $fsConfig->getUrl() ?>index.php/inicio/categoria" class="btn btn-primary" role="button">Ver mas</a></p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </center>
-    <center>
-      <div class="visible-xs visible-md">
-        <div class="col-sm-12 col-md-4 col-xs-12">
-          <div class="thumbnail">
-            <img src="<?php echo $fsConfig->getUrl() ?>image/CULTURA.png" width="100px" height="100px">
-            <div class="caption">
-              <h3>Cultura</h3>
-              <p><a href="<?php echo $fsConfig->getUrl() ?>index.php/inicio/categoria" class="btn btn-primary" role="button">Ver mas</a></p>
-            </div>
-          </div>
-        </div>
-        <div class="col-sm-12 col-md-4 col-xs-12">
-          <div class="thumbnail">
-            <img src="<?php echo $fsConfig->getUrl() ?>image/DEPORTE.png" width="100px" height="100px">
-            <div class="caption">
-              <h3>Deporte</h3>
-              <p><a href="<?php echo $fsConfig->getUrl() ?>index.php/inicio/categoria" class="btn btn-primary" role="button">Ver mas</a></p>
-            </div>
-          </div>
-        </div>
-        <div class="col-sm-12 col-md-4 col-xs-12">
-          <div class="thumbnail">
-            <img src="<?php echo $fsConfig->getUrl() ?>image/HISTORIA.png" width="100px" height="100px">
-            <div class="caption">
-              <h3>Historia</h3>
-              <p><a href="<?php echo $fsConfig->getUrl() ?>index.php/inicio/categoria" class="btn btn-primary" role="button">Ver mas</a></p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </center>
-  </div>
-
 </div>
-</div>
-<?php  include_once $fsConfig->getPath(). 'view/partial/foot.php' ?>
+<?php include_once $fsConfig->getPath() . 'view/partial/foot.php' ?>
+
+
