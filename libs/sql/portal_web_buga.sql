@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 30-11-2015 a las 14:09:32
+-- Tiempo de generación: 04-12-2015 a las 03:42:32
 -- Versión del servidor: 5.6.16
 -- Versión de PHP: 5.5.11
 
@@ -38,6 +38,17 @@ CREATE TABLE IF NOT EXISTS `bdp_categoria` (
   KEY `cat_cat_id` (`cat_cat_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
+--
+-- Volcado de datos para la tabla `bdp_categoria`
+--
+
+INSERT INTO `bdp_categoria` (`cat_id`, `cat_nombre`, `cat_activo`, `cat_cat_id`, `cat_created`, `cat_update`, `cat_delete`) VALUES
+(1, 'Cultural', 1, 1, '2015-12-04 02:33:29', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+(2, 'Deportes', 1, 2, '2015-12-04 02:33:29', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+(3, 'Historia', 1, 1, '2015-12-04 02:35:34', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+(4, 'Religion', 1, 2, '2015-12-04 02:35:34', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+(5, 'ecoturismo', 1, 3, '2015-12-04 02:35:56', '0000-00-00 00:00:00', '0000-00-00 00:00:00');
+
 -- --------------------------------------------------------
 
 --
@@ -63,6 +74,14 @@ CREATE TABLE IF NOT EXISTS `bdp_dato_usuario` (
   KEY `usu_id` (`usu_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
+--
+-- Volcado de datos para la tabla `bdp_dato_usuario`
+--
+
+INSERT INTO `bdp_dato_usuario` (`dus_id`, `usu_id`, `dus_nombre`, `dus_apellidos`, `dus_correo`, `dus_genero`, `dus_fecha_nacimiento`, `dus_facebook`, `dus_twitter`, `dus_google_plus`, `dus_avatar`, `dus_created_at`, `dus_update_at`, `dus_delete_at`) VALUES
+(1, 1, 'lizeth', 'giraldo', 'liz@gmail.com', 0, '1993-02-15', 'liz', 'lize', 'lizeth', '12294731_1637710353163639_2184491027267341504_n.jpg', '2015-12-03 00:06:19', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+(2, 2, 'q', 'q', 'q@j.vom', 0, '2015-12-03', 'q', 'q', 'q', '2723-un-maquillaje-sobrecargado-no-hara-que-680x0-2.jpg', '2015-12-03 14:43:24', '0000-00-00 00:00:00', '0000-00-00 00:00:00');
+
 -- --------------------------------------------------------
 
 --
@@ -76,6 +95,13 @@ CREATE TABLE IF NOT EXISTS `bdp_estado` (
   `est_delete_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
   PRIMARY KEY (`est_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
+
+--
+-- Volcado de datos para la tabla `bdp_estado`
+--
+
+INSERT INTO `bdp_estado` (`est_id`, `est_nombre`, `est_created_at`, `est_delete_at`) VALUES
+(1, 'activo', '2015-12-04 02:36:52', '0000-00-00 00:00:00');
 
 -- --------------------------------------------------------
 
@@ -216,6 +242,15 @@ CREATE TABLE IF NOT EXISTS `bdp_rol` (
   PRIMARY KEY (`rol_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
+--
+-- Volcado de datos para la tabla `bdp_rol`
+--
+
+INSERT INTO `bdp_rol` (`rol_id`, `rol_rol`, `rol_created_at`, `rol_update_at`, `rol_delete_at`) VALUES
+(1, 'admin', '2015-12-01 05:11:40', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+(2, 'usuario', '2015-12-04 02:31:11', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+(3, 'cliente', '2015-12-04 02:31:18', '0000-00-00 00:00:00', '0000-00-00 00:00:00');
+
 -- --------------------------------------------------------
 
 --
@@ -255,14 +290,22 @@ CREATE TABLE IF NOT EXISTS `bdp_usuario` (
   `usu_id` int(11) NOT NULL,
   `usu_usuario` varchar(20) COLLATE utf8_spanish_ci NOT NULL,
   `usu_password` varchar(32) COLLATE utf8_spanish_ci NOT NULL,
-  `usu_activo` tinyint(1) NOT NULL,
+  `usu_activado` tinyint(1) NOT NULL,
   `rol_id` int(11) NOT NULL,
   `usu_created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `usu_update_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
-  `usu_delete_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `usu_deleted_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`usu_id`),
   KEY `rol_id` (`rol_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
+
+--
+-- Volcado de datos para la tabla `bdp_usuario`
+--
+
+INSERT INTO `bdp_usuario` (`usu_id`, `usu_usuario`, `usu_password`, `usu_activado`, `rol_id`, `usu_created_at`, `usu_update_at`, `usu_deleted_at`) VALUES
+(1, 'lizeth', '123', 1, 1, '2015-12-03 00:06:19', '0000-00-00 00:00:00', NULL),
+(2, 'q', 'q', 1, 1, '2015-12-03 14:43:24', '0000-00-00 00:00:00', NULL);
 
 --
 -- Restricciones para tablas volcadas
